@@ -3,9 +3,9 @@ import os
 import psycopg2
 import pandas as pd
 
-from sparkify_postgres_db.constants import DIR_DATA_TEST
-from sparkify_postgres_db.src.sql_queries import songplays_check
-from sparkify_postgres_db.src import etl
+from postgres_etl_template.constants import DIR_DATA_TEST
+from postgres_etl_template.src.sql_queries import songplays_check
+from postgres_etl_template.src import etl
 
 
 class TestETL(unittest.TestCase):
@@ -21,7 +21,7 @@ class TestETL(unittest.TestCase):
         ])
 
         # check that there is only one element
-        conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=student password=student")
+        conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=postgres")
         cur = conn.cursor()
 
         # get elements with not null artist id

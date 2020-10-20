@@ -3,8 +3,8 @@ import sys
 import argparse
 import pandas as pd
 
-from sparkify_postgres_db.src import create_tables, utils_dir, utils_transform_data
-from sparkify_postgres_db.src.sql_queries import song_table_insert, \
+from postgres_etl_template.src import create_tables, utils_dir, utils_transform_data
+from postgres_etl_template.src.sql_queries import song_table_insert, \
     artist_table_insert, \
     time_table_insert, \
     user_table_insert, \
@@ -58,7 +58,7 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
-    """Process and insert in the database all the data in a given folder"""
+    """Process and insert in the database all the data in a folder"""
     # get all files matching extension from directory
     all_files = utils_dir.get_files(filepath)
 
@@ -91,7 +91,7 @@ def main(args=None):
     if args.reset_tables:
         create_tables.main()
 
-    # transform and laod
+    # transform and load
     conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=student password=student")
     cur = conn.cursor()
     process_data(cur, conn, filepath=args.path_data_songs, func=process_song_file)

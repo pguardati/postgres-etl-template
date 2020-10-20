@@ -1,7 +1,7 @@
 import pandas as pd
 import psycopg2
 
-from sparkify_postgres_db.src.sql_queries import tables
+from postgres_etl_template.src.sql_queries import tables
 
 
 def get_top_elements_from_table(cur, table):

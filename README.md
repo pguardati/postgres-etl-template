@@ -24,46 +24,46 @@ export PYTHONPATH
 ```
 e.g.
 ```
-PYTHONPATH=~/PycharmProjects/SparkifyPostgresDB:$PYTHONPATH 
+PYTHONPATH=~/PycharmProjects/postgres-etl-template:$PYTHONPATH 
 export PYTHONPATH
 ```
 
 To install and activate the environment:
 ```
 conda env create -f environment.yml
-conda activate sparkify_postgres_db 
+conda activate postgres_etl_template 
 ```
 
 
 ## Usage
 To drop the current tables and create new empty ones:
 ```
-python sparkify_postgres_db/src/create_tables.py
+python postgres_etl_template/src/create_tables.py
 ```
 
 To run the etl pipeline on the test data:
 ```
-python sparkify_postgres_db/src/etl.py sparkify_postgres_db/tests/test_data/song_data  sparkify_postgres_db/tests/test_data/log_data --reset-table
+python postgres_etl_template/src/etl.py postgres_etl_template/tests/test_data/song_data  postgres_etl_template/tests/test_data/log_data --reset-table
 ```
 
 To run the etl pipeline on the full data,  
 Download the data from Udacity and run:
 ```
-python sparkify_postgres_db/src/etl.py path/to/songs/data path/to/logs/data --reset-table
+python postgres_etl_template/src/etl.py path/to/songs/data path/to/logs/data --reset-table
 ```
 e.g:
 ```
-python sparkify_postgres_db/src/etl.py data/song_data data/log_data --reset-table
+python postgres_etl_template/src/etl.py data/song_data data/log_data --reset-table
 ```
 
 To check the content of the database, run:
 ```
-python sparkify_postgres_db/src/check_database.py
+python postgres_etl_template/src/check_database.py
 ```
 
 ## Tests
 To run all unittests:
 ```
-python -m unittest discover sparkify_postgres_db/tests
+python -m unittest discover postgres_etl_template/tests
 ```
 

@@ -1,4 +1,4 @@
-name: sparkify_postgres_db
+name: postgres_etl_template
 channels:
   - defaults
 dependencies:

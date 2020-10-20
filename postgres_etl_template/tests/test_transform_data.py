@@ -2,9 +2,9 @@ import os
 import unittest
 import pandas as pd
 
-from sparkify_postgres_db.constants import DIR_DATA_TEST
-from sparkify_postgres_db.src import utils_dir
-from sparkify_postgres_db.src import utils_transform_data
+from postgres_etl_template.constants import DIR_DATA_TEST
+from postgres_etl_template.src import utils_dir
+from postgres_etl_template.src import utils_transform_data
 
 
 class TestTransform(unittest.TestCase):
