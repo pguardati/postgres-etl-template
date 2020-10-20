@@ -31,7 +31,7 @@ export PYTHONPATH
 
 To install and activate the environment:
 ```
-conda env create -f environment.yml
+conda env create -f postgres_etl_template/environment.yml
 conda activate postgres_etl_template 
 ```
 
