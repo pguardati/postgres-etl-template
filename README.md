@@ -1,6 +1,6 @@
 # postgres-etl-template
 
-Template of an ETL pipeline to load data into a Postgres database.  
+Template of an ETL pipeline to load data into a PostgreSQL database.  
 The template is based on a SQL project designed for the Data Engineering Nanodegree of Udacity.
 
 The database is designed to combine information  
