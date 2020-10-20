@@ -1,9 +1,10 @@
 # postgres-etl-template
 
 Template of an ETL pipeline to load data into a Postgres database.  
+The template is based on a SQL project designed for the Data Engineering Nanodegree of Udacity.
 
-The database is designed to combine information 
-from user choices (logs) and a music library (songs).
+The database is designed to combine information  
+from user choices (logs) and a music library (songs).  
 The purpose is to to track user preferences:  
 e.g: if a given user prefers to switch between artists or to follow a specific one.
 
