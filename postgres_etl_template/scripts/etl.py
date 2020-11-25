@@ -4,7 +4,7 @@ import argparse
 import pandas as pd
 
 from postgres_etl_template.scripts import create_tables
-from postgres_etl_template.src import utils_dir, utils_transform_data
+from postgres_etl_template.src import utils_misc, utils_transform_data
 from postgres_etl_template.src.sql_queries import song_table_insert, \
     artist_table_insert, \
     time_table_insert, \
@@ -61,7 +61,7 @@ def process_log_file(cur, filepath):
 def process_data(cur, conn, filepath, func):
     """Process and insert in the database each source of data"""
     # get all files matching extension from directory
-    all_files = utils_dir.get_files(filepath)
+    all_files = utils_misc.get_files(filepath)
     num_files = len(all_files)
     print('{} files found in {}'.format(num_files, filepath))
 
@@ -73,7 +73,7 @@ def process_data(cur, conn, filepath, func):
 
 
 def parse_input(args):
-    parser = argparse.ArgumentParser(description="Process raw data and load them into the database")
+    parser = argparse.ArgumentParser(description="Process and load raw data into a database")
     parser.add_argument("path_data_songs", help="Path where are stored the raw data of songs")
     parser.add_argument("path_data_logs", help="Path where are stored the raw data of logs")
     parser.add_argument("--reset-tables", help="Drop and create from scratch all database tables", action="store_true")

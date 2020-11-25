@@ -3,15 +3,15 @@ import unittest
 import pandas as pd
 
 from postgres_etl_template.constants import DIR_DATA_TEST
-from postgres_etl_template.src import utils_dir
+from postgres_etl_template.src import utils_misc
 from postgres_etl_template.src import utils_transform_data
 
 
 class TestTransform(unittest.TestCase):
     """Test that the transformations computed prior the sql insertion give deterministic results"""
     def setUp(self):
-        self.df_raw_songs = utils_dir.get_df_from_dir(os.path.join(DIR_DATA_TEST, "song_data"))
-        self.df_raw_log = utils_dir.get_df_from_dir(os.path.join(DIR_DATA_TEST, "log_data"))
+        self.df_raw_songs = utils_misc.get_df_from_dir(os.path.join(DIR_DATA_TEST, "song_data"))
+        self.df_raw_log = utils_misc.get_df_from_dir(os.path.join(DIR_DATA_TEST, "log_data"))
 
     def test_song_subset(self):
         df_songs, df_artists = utils_transform_data.clean_and_transform_data_songs(self.df_raw_songs)
