@@ -41,14 +41,7 @@ def create_tables(cur, conn):
 
 
 def main():
-    """Drop database and create a new one, in particular:
-    - Drops (if exists) and Creates the sparkify database.
-    - Establishes connection with the sparkify database and gets
-    cursor to it.
-    - Drops all the tables.
-    - Creates all tables needed.
-    - Finally, closes the connection.
-    """
+    """Drop database and create a new one"""
     cur, conn = create_database()
 
     drop_tables(cur, conn)

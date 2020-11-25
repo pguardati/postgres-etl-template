@@ -4,9 +4,9 @@ import pandas as pd
 
 
 def get_files(directory):
-    """Get all json files and subfiles from a directory
+    """Read names of all json files in a directory, subdirectory included
     Args:
-        directory:
+        directory: directory where the files are stored
 
     Returns:
         list
@@ -20,9 +20,9 @@ def get_files(directory):
 
 
 def get_df_from_dir(directory):
-    """Get a unique dataframe from multiple files in a directory
+    """Generate a dataframe from multiple files
     Args:
-        directory(str):
+        directory(str): directory where the files are stored
 
     Returns:
         pd.DataFrame

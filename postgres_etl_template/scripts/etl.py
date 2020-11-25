@@ -42,7 +42,7 @@ def process_log_file(cur, filepath):
     for i, row in df_clean_log.iterrows():
         # get songid and artistid from song and artist table
         cur.execute(song_select, (row.song, row.artist, row.length))
-        res = cur.fetchall()  # cannot call res.fetchall()[0], can return null
+        res = cur.fetchall()
         song_id, artist_id = res[0] if res else (None, None)
 
         # insert songplay record
@@ -59,11 +59,9 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
-    """Process and insert in the database all the data in a folder"""
+    """Process and insert in the database each source of data"""
     # get all files matching extension from directory
     all_files = utils_dir.get_files(filepath)
-
-    # get total number of files found
     num_files = len(all_files)
     print('{} files found in {}'.format(num_files, filepath))
 
@@ -75,11 +73,10 @@ def process_data(cur, conn, filepath, func):
 
 
 def parse_input(args):
-    """Parse terminal-like arguments into a namespace"""
-    parser = argparse.ArgumentParser(description="User can define execution mode for the etl pipeline")
+    parser = argparse.ArgumentParser(description="Process raw data and load them into the database")
     parser.add_argument("path_data_songs", help="Path where are stored the raw data of songs")
     parser.add_argument("path_data_logs", help="Path where are stored the raw data of logs")
-    parser.add_argument("--reset-tables", help="Drop and create all database tables", action="store_true")
+    parser.add_argument("--reset-tables", help="Drop and create from scratch all database tables", action="store_true")
     return parser.parse_args(args)
 
 
