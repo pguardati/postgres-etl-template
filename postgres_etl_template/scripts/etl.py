@@ -3,7 +3,8 @@ import sys
 import argparse
 import pandas as pd
 
-from postgres_etl_template.src import create_tables, utils_dir, utils_transform_data
+from postgres_etl_template.scripts import create_tables
+from postgres_etl_template.src import utils_dir, utils_transform_data
 from postgres_etl_template.src.sql_queries import song_table_insert, \
     artist_table_insert, \
     time_table_insert, \

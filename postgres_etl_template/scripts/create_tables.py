@@ -1,4 +1,5 @@
 import psycopg2
+
 from postgres_etl_template.src.sql_queries import create_table_queries, \
     drop_table_queries
 
@@ -41,9 +42,9 @@ def create_tables(cur, conn):
 
 def main():
     """Drop database and create a new one, in particular:
-    - Drops (if exists) and Creates the sparkify database. 
+    - Drops (if exists) and Creates the sparkify database.
     - Establishes connection with the sparkify database and gets
-    cursor to it.  
+    cursor to it.
     - Drops all the tables.
     - Creates all tables needed.
     - Finally, closes the connection.
