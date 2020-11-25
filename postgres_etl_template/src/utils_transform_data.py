@@ -26,7 +26,7 @@ def decode_timestamp(df_timestamp):
 def clean_and_transform_data_songs(df_raw_songs):
     """Clean raw songs data and extract songs and artists dataframes
     Args:
-        df_raw_songs(pd.DataFrame):
+        df_raw_songs(pd.DataFrame): raw songs data
 
     Returns:
         tuple=[pd.DataFrame,pd.DataFrame,pd.DataFrame]
@@ -48,7 +48,7 @@ def clean_and_transform_data_songs(df_raw_songs):
 def clean_and_transform_data_log(df_raw_log):
     """Clean raw log data and extract users and datetime dataframes
     Args:
-        df_raw_log(pd.DataFrame):
+        df_raw_log(pd.DataFrame): raw log data
 
     Returns:
         tuple=[pd.DataFrame,pd.DataFrame,pd.DataFrame]

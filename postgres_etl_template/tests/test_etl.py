@@ -5,7 +5,7 @@ import pandas as pd
 
 from postgres_etl_template.constants import DIR_DATA_TEST
 from postgres_etl_template.src.sql_queries import songplays_check
-from postgres_etl_template.src import etl
+from postgres_etl_template.scripts import etl
 
 
 class TestETL(unittest.TestCase):
