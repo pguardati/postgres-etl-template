@@ -1,5 +1,5 @@
-import psycopg2
 import sys
+import psycopg2
 import argparse
 import pandas as pd
 
